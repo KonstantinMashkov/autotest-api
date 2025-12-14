@@ -12,11 +12,11 @@ class RequestCreateCourseViewDict(TypedDict):
     createdByUserId: str
     
 class RequestUpdateCourseViewDict(TypedDict):
-    title: str
-    maxScore: int
-    minScore: int
-    description: str
-    estimatedTime: str 
+    title: str | None
+    maxScore: int | None
+    minScore: int | None
+    description: str | None
+    estimatedTime: str | None
 
 class CoursesClient(APIClient):
     
@@ -29,7 +29,7 @@ class CoursesClient(APIClient):
     def get_courses_view_course_id_api(self, course_id: str) -> Response:
         return self.get(f'/api/v1/courses/{course_id}')
     
-    def patch_update_course_view_api(self, course_id: str, request) -> Response:
+    def patch_update_course_view_api(self, course_id: str, request: RequestUpdateCourseViewDict) -> Response:
         return self.patch(f'/api/v1/courses/{course_id}', json=request)
     
     def delete_courses_view_api(self, course_id: str) -> Response:
