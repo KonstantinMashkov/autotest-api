@@ -1,0 +1,36 @@
+from typing import TypedDict
+from httpx import Response
+from clients.api_client import APIClient
+
+class RequestCreateCourseViewDict(TypedDict):
+    title: str
+    maxScore: int
+    minScore: int
+    description: str
+    estimatedTime: str
+    previewFileId: str
+    createdByUserId: str
+    
+class RequestUpdateCourseViewDict(TypedDict):
+    title: str
+    maxScore: int
+    minScore: int
+    description: str
+    estimatedTime: str 
+
+class CoursesClient(APIClient):
+    
+    def get_courses_view_api(self, query: str) -> Response:
+        return self.get(f'/api/v1/courses', params=query)
+    
+    def post_create_course_view_api(self, request: RequestCreateCourseViewDict) -> Response:
+        return self.post(f'/api/v1/courses', json=request)
+    
+    def get_courses_view_course_id_api(self, course_id: str) -> Response:
+        return self.get(f'/api/v1/courses/{course_id}')
+    
+    def patch_update_course_view_api(self, course_id: str, request) -> Response:
+        return self.patch(f'/api/v1/courses/{course_id}', json=request)
+    
+    def delete_courses_view_api(self, course_id: str) -> Response:
+        return self.get(f'/api/v1/courses/{course_id}')
