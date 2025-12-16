@@ -35,10 +35,16 @@ class AuthenticationClient(APIClient):
     
     def login(self, request: LoginRequestDict) -> LoginResponseDict:
         response = self.login_api(request)
+        print(f'Login status: {response.status_code}')
         return response.json()
     
 def get_authentification_client() -> AuthenticationClient:
     return AuthenticationClient(client=get_public_http_client())
+
+
+client = get_authentification_client()
+response = client.login({'email': 'user@example.com', 'password': 'string'})
+print(response)
     
 # base_url='http://localhost:8000'
 # http_client = Client(base_url=base_url)
