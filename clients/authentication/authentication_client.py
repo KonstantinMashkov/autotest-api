@@ -1,54 +1,57 @@
-import sys
-import os
+from httpx import Response
 
-from public_http_builder import get_public_http_client
-sys.path.append(os.path.join(os.path.dirname(__file__), 'clients'))
 from clients.api_client import APIClient
-from httpx import Response, Client
-from typing import TypedDict
+# Добавили импорт моделей
+from clients.authentication.authentication_schema import LoginRequestSchema, RefreshRequestSchema, LoginResponseSchema
+from clients.public_http_builder import get_public_http_client
 
 
-class Token(TypedDict):
-    tokenType: str
-    accessToken: str
-    refreshToken: str
-    
-class LoginResponseDict(TypedDict):
-    token: Token
-
-class LoginRequestDict(TypedDict):
-    email: str
-    password: str
-    
-class RefreshRequestDict(TypedDict):
-    refreshToken: str 
+# Старые модели с использованием TypedDict были удалены
 
 class AuthenticationClient(APIClient):
     """
     Клиент для работы с /api/v1/authentication
     """
-    def login_api(self, request: LoginRequestDict) -> Response:
-        return self.post('/api/v1/authentication/login', json=request)
-    
-    def refresh_api(self, request: RefreshRequestDict) -> Response:
-        return self.post('/api/v1/authentication/refresh', json=request)
-    
-    def login(self, request: LoginRequestDict) -> LoginResponseDict:
+
+    # Теперь используем pydantic-модель для аннотации
+    def login_api(self, request: LoginRequestSchema) -> Response:
+        """
+        Метод выполняет аутентификацию пользователя.
+
+        :param request: Словарь с email и password.
+        :return: Ответ от сервера в виде объекта httpx.Response
+        """
+        return self.post(
+            "/api/v1/authentication/login",
+            # Сериализуем модель в словарь с использованием alias
+            json=request.model_dump(by_alias=True)
+        )
+
+    # Теперь используем pydantic-модель для аннотации
+    def refresh_api(self, request: RefreshRequestSchema) -> Response:
+        """
+        Метод обновляет токен авторизации.
+
+        :param request: Словарь с refreshToken.
+        :return: Ответ от сервера в виде объекта httpx.Response
+        """
+        return self.post(
+            "/api/v1/authentication/refresh",
+            # Сериализуем модель в словарь с использованием alias
+            json=request.model_dump(by_alias=True)
+        )
+
+    # Теперь используем pydantic-модель для аннотации
+    def login(self, request: LoginRequestSchema) -> LoginResponseSchema:
         response = self.login_api(request)
-        print(f'Login status: {response.status_code}')
-        return response.json()
-    
-def get_authentification_client() -> AuthenticationClient:
+        # Инициализируем модель через валидацию JSON строки
+        return LoginResponseSchema.model_validate_json(response.text)
+
+
+def get_authentication_client() -> AuthenticationClient:
+    """
+    Функция создаёт экземпляр AuthenticationClient с уже настроенным HTTP-клиентом.
+
+    :return: Готовый к использованию AuthenticationClient.
+    """
     return AuthenticationClient(client=get_public_http_client())
-
-
-# client = get_authentification_client()
-# response = client.login({'email': 'user@example.com', 'password': 'string'})
-# print(response)
-    
-# base_url='http://localhost:8000'
-# http_client = Client(base_url=base_url)
-# client = AuthenticationClient(client=http_client)
-# response = client.login_api({'email': 'user@example.com', 'password': 'string'})
-# print(response.status_code)
-
