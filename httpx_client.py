@@ -1,7 +1,8 @@
 import httpx
+from tools.fakers import fake
 
 login_payload = {
-    "email": f'test@example.com',
+    "email": fake.email(),
     "password": "string"
 }
 login_response = httpx.post("http://localhost:8000/api/v1/authentication/login", json=login_payload)

@@ -4,9 +4,10 @@
 # Здесь вы найдете Swagger документацию, где будут перечислены все доступные методы взаимодействия с сервером.
 
 import httpx
+from tools.fakers import fake
 
 login_payload = {
-  "email": "test@example.com",
+  "email": fake.email(),
   "password": "string"
 }
 
