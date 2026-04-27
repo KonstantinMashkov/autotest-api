@@ -18,7 +18,7 @@ create_files_headers = {
 create_file_response = httpx.post(
     'http://localhost:8000/api/v1/files', 
     data={'filename': 'image.jpg', 'directory': 'test_upload_file'}, 
-    files={'upload_file': open('./test_data/files/image.jpg', 'rb')},
+    files={'upload_file': open('testdata/files/image.jpg', 'rb')},
     headers=create_files_headers
     )
 
