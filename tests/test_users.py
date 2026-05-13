@@ -14,7 +14,8 @@ from users.private_users_client import PrivateUsersClient
 
 @pytest.mark.users
 @pytest.mark.regression
-def test_create_user(public_users_client: PublicUsersClient):
+@pytest.mark.parametrize("email", ["mail.ru", "gmail.com", "example.com"])
+def test_create_user(email: str, public_users_client: PublicUsersClient):
 
     request = CreateUserRequestSchema()
     response = public_users_client.create_user_api(request)
