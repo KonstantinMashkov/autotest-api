@@ -1,1 +1,0 @@
-Running test on host: https://stable.company.com

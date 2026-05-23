@@ -33,20 +33,23 @@ class TestUsers:
     @allure.sub_suite(AllureStory.CREATE_ENTITY)
     @allure.severity(Severity.BLOCKER)
     def test_create_user(self, email: str, public_users_client: PublicUsersClient):
-        request = CreateUserRequestSchema(email=fake.email(domain=email))
-        response = public_users_client.create_user_api(request)
-        response_data = CreateUserResponseSchema.model_validate_json(response.text)
-
-        assert_status_code(response.status_code, HTTPStatus.OK)
-        assert_create_user_response(request, response_data)
-
-        validate_json_schema(response.json(), response_data.model_json_schema())
+        with allure.step("Create request"):
+            request = CreateUserRequestSchema(email=fake.email(domain=email))
+        with allure.step("Create response"):
+            response = public_users_client.create_user_api(request)
+        with allure.step("Get response_data"):
+            response_data = CreateUserResponseSchema.model_validate_json(response.text)
+        with allure.step("Assert response_data"):
+            assert_status_code(response.status_code, HTTPStatus.OK)
+            assert_create_user_response(request, response_data)
+            validate_json_schema(response.json(), response_data.model_json_schema())
 
     @allure.tag(AllureTag.GET_ENTITY)
     @allure.story(AllureStory.GET_ENTITY)  # Добавили story
     @allure.title("Get user me")
     @allure.sub_suite(AllureStory.GET_ENTITY)
     @allure.severity(Severity.CRITICAL)
+    @allure.step("Get user me")
     def test_get_user_me(
             self,
             function_user: UserFixture,
