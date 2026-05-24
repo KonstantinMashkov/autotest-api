@@ -1,0 +1,11 @@
+curl -X 'PATCH' \
+  'http://localhost:8000/api/v1/courses/9231562e-71ef-46ba-a028-74b976aae979' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate, br' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA1LTI0VDA5OjI0OjU1Ljg3ODAwMyIsInVzZXJfaWQiOiIyN2U4ZTBmMS1lOThkLTQ1MzEtOGQ3YS0wMjVkN2I4NTkzOTQifQ.kfNP2kpxnUQkU0J9vGU-17wNf3q9jsFT-B6ZiYuajjs' \
+  -H 'content-length: 245' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Trial appear fight mouth loss color.","maxScore":74,"minScore":14,"description":"Analysis series always second performance light south medical. Yet member actually old good goal. Cell too bag usually create.","estimatedTime":"1 weeks"}'

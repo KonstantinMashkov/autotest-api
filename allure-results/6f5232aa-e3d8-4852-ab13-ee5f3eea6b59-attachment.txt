@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate, br' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA1LTI0VDA5OjI0OjQ4LjgzOTIyNSIsInVzZXJfaWQiOiI0ZWIzMTY4Ni1iMmQxLTQ4MDUtOWRiZi1iZDEzNGI3NTQyZTAifQ.DcnHkY6pUXdmgtPPNWuXYHkRR1dr6uXLcjVrpDtNJRo' \
+  -H 'content-length: 350' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Card exactly region well history fill five.","maxScore":60,"minScore":26,"description":"Case glass might name range wall group road. Front senior wish key happen. Marriage learn reflect health travel.","estimatedTime":"1 weeks","previewFileId":"cd0b5872-9462-4b75-b1a1-331ba7d2376f","createdByUserId":"4eb31686-b2d1-4805-9dbf-bd134b7542e0"}'

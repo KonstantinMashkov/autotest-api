@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate, br' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA1LTI0VDA5OjI0OjU1Ljg3ODAwMyIsInVzZXJfaWQiOiIyN2U4ZTBmMS1lOThkLTQ1MzEtOGQ3YS0wMjVkN2I4NTkzOTQifQ.kfNP2kpxnUQkU0J9vGU-17wNf3q9jsFT-B6ZiYuajjs' \
+  -H 'content-length: 339' \
+  -H 'content-type: application/json' \
+  -d '{"title":"Dinner next who friend outside kitchen.","maxScore":95,"minScore":29,"description":"Boy project prove hope ready end. Pm understand true difficult sing. Create arm return many all key wall.","estimatedTime":"1 weeks","previewFileId":"72fb6e01-df2f-4b94-96a7-e1935f8a9dbc","createdByUserId":"27e8e0f1-e98d-4531-8d7a-025d7b859394"}'
