@@ -1,0 +1,13 @@
+2026-05-27 21:31:49,436 | HTTP_CLIENT | INFO | Make POST request to http://localhost:8000/api/v1/users
+2026-05-27 21:31:51,681 | HTTP_CLIENT | INFO | Got response 200 OK from http://localhost:8000/api/v1/users
+2026-05-27 21:31:51,832 | HTTP_CLIENT | INFO | Make POST request to http://localhost:8000/api/v1/authentication/login
+2026-05-27 21:31:54,068 | HTTP_CLIENT | INFO | Got response 200 OK from http://localhost:8000/api/v1/authentication/login
+2026-05-27 21:31:54,219 | HTTP_CLIENT | INFO | Make POST request to http://localhost:8000/api/v1/files
+2026-05-27 21:31:56,292 | HTTP_CLIENT | INFO | Got response 200 OK from http://localhost:8000/api/v1/files
+2026-05-27 21:31:56,293 | HTTP_CLIENT | INFO | Make POST request to http://localhost:8000/api/v1/courses
+2026-05-27 21:31:56,308 | HTTP_CLIENT | INFO | Got response 200 OK from http://localhost:8000/api/v1/courses
+2026-05-27 21:31:56,310 | HTTP_CLIENT | INFO | Make PATCH request to http://localhost:8000/api/v1/courses/f522b053-225c-43c8-a4de-b59ed8bf0581
+2026-05-27 21:31:56,322 | HTTP_CLIENT | INFO | Got response 200 OK from http://localhost:8000/api/v1/courses/f522b053-225c-43c8-a4de-b59ed8bf0581
+2026-05-27 21:31:56,322 | BASE_ASSERTIONS | INFO | Check that response status code equals to 200
+2026-05-27 21:31:56,322 | COURSES_ASSERTIONS | INFO | Check update course response
+2026-05-27 21:31:56,323 | SCHEMA_ASSERTIONS | INFO | Validating JSON schema

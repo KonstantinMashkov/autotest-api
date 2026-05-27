@@ -1,0 +1,5 @@
+2026-05-27 21:32:48,189 | HTTP_CLIENT | INFO | Make POST request to http://localhost:8000/api/v1/users
+2026-05-27 21:32:50,431 | HTTP_CLIENT | INFO | Got response 200 OK from http://localhost:8000/api/v1/users
+2026-05-27 21:32:50,432 | BASE_ASSERTIONS | INFO | Check that response status code equals to 200
+2026-05-27 21:32:50,432 | USERS_ASSERTIONS | INFO | Check create user response
+2026-05-27 21:32:50,432 | SCHEMA_ASSERTIONS | INFO | Validating JSON schema

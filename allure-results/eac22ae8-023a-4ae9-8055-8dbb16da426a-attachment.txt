@@ -1,0 +1,9 @@
+2026-05-27 21:32:03,573 | HTTP_CLIENT | INFO | Make POST request to http://localhost:8000/api/v1/users
+2026-05-27 21:32:05,820 | HTTP_CLIENT | INFO | Got response 200 OK from http://localhost:8000/api/v1/users
+2026-05-27 21:32:05,976 | HTTP_CLIENT | INFO | Make POST request to http://localhost:8000/api/v1/authentication/login
+2026-05-27 21:32:08,226 | HTTP_CLIENT | INFO | Got response 200 OK from http://localhost:8000/api/v1/authentication/login
+2026-05-27 21:32:08,377 | HTTP_CLIENT | INFO | Make POST request to http://localhost:8000/api/v1/files
+2026-05-27 21:32:10,446 | HTTP_CLIENT | INFO | Got response 200 OK from http://localhost:8000/api/v1/files
+2026-05-27 21:32:10,447 | BASE_ASSERTIONS | INFO | Check that response status code equals to 200
+2026-05-27 21:32:10,447 | FILES_ASSERTIONS | INFO | Check create file response
+2026-05-27 21:32:10,448 | SCHEMA_ASSERTIONS | INFO | Validating JSON schema

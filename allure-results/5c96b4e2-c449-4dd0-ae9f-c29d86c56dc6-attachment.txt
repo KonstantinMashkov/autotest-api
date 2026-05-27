@@ -1,0 +1,9 @@
+2026-05-27 21:32:17,684 | HTTP_CLIENT | INFO | Make POST request to http://localhost:8000/api/v1/users
+2026-05-27 21:32:19,930 | HTTP_CLIENT | INFO | Got response 200 OK from http://localhost:8000/api/v1/users
+2026-05-27 21:32:20,083 | HTTP_CLIENT | INFO | Make POST request to http://localhost:8000/api/v1/authentication/login
+2026-05-27 21:32:22,310 | HTTP_CLIENT | INFO | Got response 200 OK from http://localhost:8000/api/v1/authentication/login
+2026-05-27 21:32:22,468 | HTTP_CLIENT | INFO | Make POST request to http://localhost:8000/api/v1/files
+2026-05-27 21:32:24,532 | HTTP_CLIENT | INFO | Got response 422 Unprocessable Content from http://localhost:8000/api/v1/files
+2026-05-27 21:32:24,533 | BASE_ASSERTIONS | INFO | Check that response status code equals to 422
+2026-05-27 21:32:24,533 | FILES_ASSERTIONS | INFO | Check create file with empty filename response
+2026-05-27 21:32:24,533 | SCHEMA_ASSERTIONS | INFO | Validating JSON schema

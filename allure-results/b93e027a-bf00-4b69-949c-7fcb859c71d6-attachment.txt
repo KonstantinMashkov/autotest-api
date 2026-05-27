@@ -1,0 +1,9 @@
+2026-05-27 21:32:31,701 | HTTP_CLIENT | INFO | Make POST request to http://localhost:8000/api/v1/users
+2026-05-27 21:32:33,927 | HTTP_CLIENT | INFO | Got response 200 OK from http://localhost:8000/api/v1/users
+2026-05-27 21:32:34,078 | HTTP_CLIENT | INFO | Make POST request to http://localhost:8000/api/v1/authentication/login
+2026-05-27 21:32:36,338 | HTTP_CLIENT | INFO | Got response 200 OK from http://localhost:8000/api/v1/authentication/login
+2026-05-27 21:32:36,490 | HTTP_CLIENT | INFO | Make GET request to http://localhost:8000/api/v1/files/incorrect-file-id
+2026-05-27 21:32:38,563 | HTTP_CLIENT | INFO | Got response 422 Unprocessable Content from http://localhost:8000/api/v1/files/incorrect-file-id
+2026-05-27 21:32:38,563 | BASE_ASSERTIONS | INFO | Check that response status code equals to 422
+2026-05-27 21:32:38,564 | FILES_ASSERTIONS | INFO | Check get file with incorrect file id response
+2026-05-27 21:32:38,564 | SCHEMA_ASSERTIONS | INFO | Validating JSON schema

@@ -1,0 +1,11 @@
+curl -X 'POST' \
+  'http://localhost:8000/api/v1/courses' \
+  -H 'host: localhost:8000' \
+  -H 'accept: */*' \
+  -H 'accept-encoding: gzip, deflate, br' \
+  -H 'connection: keep-alive' \
+  -H 'user-agent: python-httpx/0.28.1' \
+  -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTA1LTI3VDE5OjAxOjQ3LjAyNjgxNiIsInVzZXJfaWQiOiJkNzllZDA1NC0yZmU5LTQxNzctOGU2Yi0wMGM3ZTkxN2RjNDEifQ.yYM4ZMRnUNKvk_T9GNSJLmjGOt5IaRXxkw_A-lPfEX4' \
+  -H 'content-length: 322' \
+  -H 'content-type: application/json' \
+  -d '{"title":"School provide those keep maybe four especially once.","maxScore":63,"minScore":4,"description":"Tough treat image eat. Present only people yard trial reveal large believe.","estimatedTime":"7 weeks","previewFileId":"b045fb1c-89f5-4fe0-9809-23b32f3fe5b7","createdByUserId":"d79ed054-2fe9-4177-8e6b-00c7e917dc41"}'

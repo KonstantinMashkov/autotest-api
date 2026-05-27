@@ -1,0 +1,14 @@
+2026-05-27 21:32:38,723 | HTTP_CLIENT | INFO | Make POST request to http://localhost:8000/api/v1/users
+2026-05-27 21:32:40,965 | HTTP_CLIENT | INFO | Got response 200 OK from http://localhost:8000/api/v1/users
+2026-05-27 21:32:41,118 | HTTP_CLIENT | INFO | Make POST request to http://localhost:8000/api/v1/authentication/login
+2026-05-27 21:32:43,363 | HTTP_CLIENT | INFO | Got response 200 OK from http://localhost:8000/api/v1/authentication/login
+2026-05-27 21:32:43,545 | HTTP_CLIENT | INFO | Make POST request to http://localhost:8000/api/v1/files
+2026-05-27 21:32:45,629 | HTTP_CLIENT | INFO | Got response 200 OK from http://localhost:8000/api/v1/files
+2026-05-27 21:32:45,630 | HTTP_CLIENT | INFO | Make DELETE request to http://localhost:8000/api/v1/files/381892cd-e8eb-435f-81e2-e4981487aae1
+2026-05-27 21:32:45,641 | HTTP_CLIENT | INFO | Got response 200 OK from http://localhost:8000/api/v1/files/381892cd-e8eb-435f-81e2-e4981487aae1
+2026-05-27 21:32:45,642 | BASE_ASSERTIONS | INFO | Check that response status code equals to 200
+2026-05-27 21:32:45,642 | HTTP_CLIENT | INFO | Make GET request to http://localhost:8000/api/v1/files/381892cd-e8eb-435f-81e2-e4981487aae1
+2026-05-27 21:32:45,649 | HTTP_CLIENT | INFO | Got response 404 Not Found from http://localhost:8000/api/v1/files/381892cd-e8eb-435f-81e2-e4981487aae1
+2026-05-27 21:32:45,649 | BASE_ASSERTIONS | INFO | Check that response status code equals to 404
+2026-05-27 21:32:45,649 | FILES_ASSERTIONS | INFO | Check file not found response
+2026-05-27 21:32:45,650 | SCHEMA_ASSERTIONS | INFO | Validating JSON schema
